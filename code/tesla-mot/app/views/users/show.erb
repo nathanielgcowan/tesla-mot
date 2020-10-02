@@ -1,0 +1,6 @@
+<p> Here are your Cars, <%= @user.username %>
+<% @user.cars.each do |car| %>
+  <ul>
+    <li><a href="/cars/<%=car.id%>"><%= car.name %></a></li>
+  </ul>
+<% end %>

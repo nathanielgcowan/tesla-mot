@@ -1,0 +1,15 @@
+<h1>Login</h1>
+		
+		<form action=”/batteries” method =”POST”>
+			<label>Battery Name</label>
+			<input type=”text” name=”name” value=”<%=@battery.name %></br>
+			
+			<label>Battery capacity</label>
+			<input type=”text” name=”capacity” value=”<%=@battery.capacity%>”> </br>
+
+			<label>Which Battery does this belong in? </label>
+			<select name=”battery_id”>
+            			</select>
+
+			<input type=”submit” value=”Update”>
+		</form>
