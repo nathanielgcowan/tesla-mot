@@ -5,16 +5,16 @@ Battery.destroy_all
 # seventyfive = Battery.create({capacity: "75"})
 # hundred = Battery.create({capacity: "100"})
 
-zuckerburg = User.create({name: "Mark Zuckerburg", username: "Mark Zuckerburg"})
-musk = User.create({name: "Elon Musk", username: "Elon Musk"})
-gates = User.create({name: "Bill Gates", username: "Bill Gates"})
-jobs = User.create({name: "Steve Jobs", username: "Steve Jobs"})
-ballmer = User.create({name: "Steve Ballmer", username: "Steve Ballmer"})
+zuckerburg = User.create({username: "Mark Zuckerburg"})
+musk = User.create({username: "Elon Musk"})
+gates = User.create({username: "Bill Gates"})
+jobs = User.create({username: "Steve Jobs"})
+ballmer = User.create({username: "Steve Ballmer"})
 
 modelz = Car.create({model: "Model Z", year: 2020})
 model3 = Car.create({model: "Model 3", year: 2020})
 modelx = Car.create({model: "Model X", year: 2020})
-modely = Car.create({model: "Model Y" year: 2020})
+# modely = Car.create({model: "Model Y", year: 2020})
 roadster = Car.create({model: "Roadster", year: 2020})
 
 Battery.create([

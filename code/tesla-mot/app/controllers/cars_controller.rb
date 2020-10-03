@@ -1,7 +1,9 @@
 class CarsController < ApplicationController
 
     get "/cars" do
-        "You are logged in as #{session[:email]}"
+        redirect_if_not_logged_in
+        @cars = Car.all
+        erb :'cars/index'
     end
 
     get "/cars/new" do

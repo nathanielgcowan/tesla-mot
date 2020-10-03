@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20201002022006) do
     t.string   "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "car_id"
   end
 
   create_table "cars", force: :cascade do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20201002022006) do
     t.string   "model"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
