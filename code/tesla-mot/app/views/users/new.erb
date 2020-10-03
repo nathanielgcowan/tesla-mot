@@ -1,6 +1,24 @@
-<h1>New User</h1>
-<form action="/users/new" method="POST">
-  <p>Name: <input type="text" name="username" placeholder="Username"></p>
-  <p>Password: <input type="text" name="password" placeholder="Password"></p>
-  <input class="btn btn-primary" type="submit">
+<h1>Signup</h1>
+
+<%= "Must include email and password" if @user && @user.errors.any? %>
+
+<form action= "/users" method="POST">
+
+    <p>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" />
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+    </p>
+
+    <input type="submit" />
+
+    <p>
+        <a href="http://127.0.0.1:9294/">Home</a>
+        <a href="/users/login">Login</a>
+        <a href="/users/new">Signup</a>
+    </p>
+
 </form>

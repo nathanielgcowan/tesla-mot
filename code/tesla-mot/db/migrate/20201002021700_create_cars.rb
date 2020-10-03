@@ -3,6 +3,7 @@ class CreateCars < ActiveRecord::Migration
     create_table :cars do |t|
       t.string :model 
       t.integer :year
+      t.integer :user_id
 
       t.timestamps null: false
     end

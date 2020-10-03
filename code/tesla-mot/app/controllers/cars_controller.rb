@@ -1,43 +1,29 @@
 class CarsController < ApplicationController
 
-    get "/cars" do
-        redirect_if_not_logged_in
-        @cars = Car.all
-        erb :'cars/index'
+    get '/cars' do
+        "A list of publicaly available cars"
     end
 
-    get "/cars/new" do
-        @error_message = params[:error]
-        erb :'cars/new'
-    end
-
-    get "/cars/:id/edit" do 
-        @error_message = params[:error]
-        @car = Car.find(params[:id])
-        erb :'cars/edit'
-    end
-
-    post "/cars/:id" do
-        @car = Car.find(params[:id])
-        unless Car.valid_params?(params)
-            redirect "/cars/#{@car.id}/edit?error=wrong Car"
+    get '/cars/new' do
+        # Checking if they are logged in
+        if !logged_in?
+            redirect "users/login"
+        else
+            "A new post form"
         end
-        @car.update(params.select{|k|k=="model" || k=="year"})
-        redirect "/cars/#{@car.id}"
     end
 
-    get "/cars/:id" do
-        redirect_if_not_logged_in
-        @car = Car.find(params[:id])
-        erb :'cars/show'
-    end
-
-    post "/cars" do
-
-        unless Car.valid_params?(params)
-            redirect "/cars/new?error=invalid car"
+    get '/cars/:id/edit' do
+        # Checking if they are logged in
+        if !logged_in?
+            redirect '/users/login' # Redirecting if they aren't
+        else
+            #how do I find the post that only the author user is allowsed to edit
+            if cars = current_user.cars.find_by(params[:id])
+                "An car remodeling #{current_user.id} is editing #{car.id}" # rendering if they are
+            else
+                redirect '/cars'
+            end
         end
-        Car.create(params)
-        redirect "/cars"
     end
 end
