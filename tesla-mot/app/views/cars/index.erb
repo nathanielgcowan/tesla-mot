@@ -1,0 +1,7 @@
+<% @cars.each do |car| %>
+  <%= car.name %><br />
+  <%= car.year %> <br />
+  <a href="/cars/<%=car.id%>/edit">Edit</a>
+  <br />
+  <br />
+<% end %>
