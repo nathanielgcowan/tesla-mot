@@ -6,7 +6,6 @@ end
 
 use Rack::MethodOverride
 #place rack methodoverride above all controllers in which you want to have access to the middleware's functionality.
-use Rack::Session::Cookie
 use CarsController
 use BatteryController
 use SessionsController
